@@ -7,12 +7,12 @@ function Directors() {
     // .map populates new array the results showing the called function in the calling array
     // math.floor => rounds off to the nearest integer
     // math.random =>  returns a random number that's greater than or equal to 0 and less than 1
-    const moviesList = (dir.movies).map((mov)=><li key={Math.floor(Math.random()  * (1000 - 100)) + 100}>{mov}</li>)
+    // const moviesList = (dir.movies).map((mov)=><li key={Math.floor(Math.random()  * (1000 - 100)) + 100}>{mov}</li>)
       return (
-        <div>
+        <div key={dir.name}>
            <h1>{dir.name}</h1>
            <ul>
-             {moviesList}
+           {(dir.movies).map((mov)=><li key={Math.floor(Math.random()  * (1000 - 100)) + 100}>{mov}</li>)};
            </ul>
         </div>)                                 
   })

@@ -2,14 +2,17 @@ import React from "react";
 import { movies } from "../data";
 
 function Movies() {
-  const movieList= movies.map((mov)=>{
-    const genreList = (mov.genres).map((gen)=><li key={Math.floor(Math.random()  * (1000 - 100)) + 100}>{gen}</li>);
+  const movieList= movies.map( (mov) => {
+    //  (mov.genres).map((gen)=><li key={Math.floor(Math.random()  * (1000 - 100)) + 100}>{gen}</li>);
     return (
-      <div >
+      <div  key = {mov.title}>
+        
          <h1>{mov.title}</h1>
          <h2>{mov.time}</h2>
          <ul>
-           {genreList}
+          {mov.genres.map((gen)=><li key={Math.floor(Math.random()  * (1000 - 100)) + 100}>{gen}</li>)};
+  
+           {/* {genreList} */}
          </ul>
       </div>
     )
